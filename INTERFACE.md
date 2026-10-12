@@ -1,0 +1,67 @@
+# Banked cache interface
+
+Mechanically formatted with Antigravity; every name, direction and width
+independently checked against the generated Verilator interface. See
+REQUIREMENTS.md and CONCURRENCY.md for behavior and limitations.
+
+| name | direction | bits | group |
+| --- | --- | --- | --- |
+| clk | input | 1 | control |
+| rst_n | input | 1 | control |
+| req_valid | input | 2 | request |
+| req_ready | output | 2 | request |
+| req_write | input | 2 | request |
+| req_mask | input | 8 | request |
+| rsp_valid | output | 2 | response |
+| rsp_ready | input | 2 | response |
+| rsp_error | output | 2 | response |
+| flush_valid | input | 1 | flush |
+| flush_ready | output | 1 | flush |
+| flush_done | output | 1 | flush |
+| flush_done_ready | input | 1 | flush |
+| flush_error | output | 1 | flush |
+| protocol_error | output | 1 | control |
+| awvalid | output | 1 | AXI-write |
+| awready | input | 1 | AXI-write |
+| awid | output | 2 | AXI-write |
+| awlen | output | 8 | AXI-write |
+| awsize | output | 3 | AXI-write |
+| awburst | output | 2 | AXI-write |
+| awlock | output | 1 | AXI-write |
+| awcache | output | 4 | AXI-write |
+| awprot | output | 3 | AXI-write |
+| awqos | output | 4 | AXI-write |
+| wvalid | output | 1 | AXI-write |
+| wready | input | 1 | AXI-write |
+| wstrb | output | 4 | AXI-write |
+| wlast | output | 1 | AXI-write |
+| bvalid | input | 1 | AXI-write |
+| bready | output | 1 | AXI-write |
+| bid | input | 2 | AXI-write |
+| bresp | input | 2 | AXI-write |
+| arvalid | output | 1 | AXI-read |
+| arready | input | 1 | AXI-read |
+| arid | output | 2 | AXI-read |
+| arlen | output | 8 | AXI-read |
+| arsize | output | 3 | AXI-read |
+| arburst | output | 2 | AXI-read |
+| arlock | output | 1 | AXI-read |
+| arcache | output | 4 | AXI-read |
+| arprot | output | 3 | AXI-read |
+| arqos | output | 4 | AXI-read |
+| rvalid | input | 1 | AXI-read |
+| rready | output | 1 | AXI-read |
+| rid | input | 2 | AXI-read |
+| rresp | input | 2 | AXI-read |
+| rlast | input | 1 | AXI-read |
+| event_hit | output | 2 | counters |
+| event_miss | output | 2 | counters |
+| req_id | input | 16 | request |
+| rsp_id | output | 16 | response |
+| awaddr | output | 32 | AXI-write |
+| wdata | output | 32 | AXI-write |
+| araddr | output | 32 | AXI-read |
+| rdata | input | 32 | AXI-read |
+| req_addr | input | 64 | request |
+| req_data | input | 64 | request |
+| rsp_data | output | 64 | response |

@@ -1,5 +1,43 @@
 # Two-requester write-back cache subsystem
 
+AI-assisted hardware project: a blocking reference and a two-bank extension
+that permits two live read bursts and cross-bank hit-under-miss. The release
+snapshot is executable, with known limitations and negative results retained.
+
+| Inspect | Evidence and scope |
+| --- | --- |
+| Data integrity | Independent accepted-request byte reference; failed write-back leaves backing stale; seven compiled faults per simulation suite |
+| Concurrency | Two live read IDs, interleaved refill, held responses, coarse per-bank reservation |
+| Formal | Banked safety depth32 and20covers; bounded protocol checks, no general byte-memory or unbounded proof |
+| Reproducibility | Candidate-004 clean replay10stages,87manifest files; formal gate assessed separately |
+| Limits | Same-bank stalls, flop arrays, no coherence/MMIO, no physical timing or licensed UVM claim |
+
+For a complete portable replay after installing the tools in TOOLS.md:
+
+```sh
+bash scripts/record_release.sh results/FRESH-REPLAY
+```
+
+Start with ARCHITECTURE.md for data ownership and CONCURRENCY.md for
+reservation, ID routing and fault boundaries. measurement/RESULTS.md retains
+all45original comparison rows, including losses. integration/README.md describes
+the actual RV32 core and its simulation clock-pause adapter. INTERFACE.md lists
+the banked module ports. No inference from simulated cycles to physical Fmax.
+
+```mermaid
+flowchart LR
+  R0[Requester 0] --> A[Address bank selection]
+  R1[Requester 1] --> A
+  A --> B0[Bank 0: two ways, one miss slot]
+  A --> B1[Bank 1: two ways, one miss slot]
+  B0 --> RD[AR arbiter and R ID routing]
+  B1 --> RD
+  B0 --> WR[One AW/W/B owner]
+  B1 --> WR
+  RD <--> RAM[AXI backing RAM]
+  WR <--> RAM
+```
+
 AI-assisted SystemVerilog cache IP and executable verification. Two ways,
 aligned 32-bit little-endian requests with byte masks, WB/WA, round-robin
 admission, opaque identities, held responses and restricted AXI4 bursts.
@@ -51,5 +89,5 @@ witness. Seven compiled faults are required per simulation suite. The changed
 harness has not been independently rereviewed. Formal safety/cover status is a
 separate bounded gate; the clean replay terminal explicitly excludes it.
 No formal byte-memory invariant, unbounded or liveness proof is claimed.
-Publication still requires authorization. AI assistance and negative performance
+The verified snapshot is in a private repository. AI assistance and negative performance
 outcomes remain disclosed in measurement/RESULTS.md and integration/README.md.
