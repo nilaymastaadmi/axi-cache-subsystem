@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "covers": 8,
+  "traces": 8,
+  "depth": 32,
+  "solver": "bitwuzla"
+}

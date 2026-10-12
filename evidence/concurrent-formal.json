@@ -1,0 +1,17 @@
+{
+  "depth": 32,
+  "geometry": "4x2",
+  "fault": false,
+  "fault_kind": null,
+  "solver": "bitwuzla",
+  "tasks": {
+    "bmc": {
+      "exit": 0,
+      "status": "PASS"
+    },
+    "cover": {
+      "exit": 0,
+      "status": "PASS"
+    }
+  }
+}

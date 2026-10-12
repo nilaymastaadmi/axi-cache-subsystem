@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "compiled_fault": "COMPARE FAIL dirty write byte cycle=1",
+  "evidence_controls": {
+    "empty_log": {
+      "status": "REJECTED",
+      "reason": "missing clean terminal"
+    },
+    "truncated_json": {
+      "status": "REJECTED",
+      "reason": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+    },
+    "count_mismatch": {
+      "status": "REJECTED",
+      "reason": "request conservation"
+    },
+    "beat_mismatch": {
+      "status": "REJECTED",
+      "reason": "beat counts"
+    },
+    "truncated_memory": {
+      "status": "REJECTED",
+      "reason": "truncated final memory"
+    }
+  }
+}

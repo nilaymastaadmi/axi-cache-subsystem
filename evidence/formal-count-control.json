@@ -1,0 +1,13 @@
+{
+  "depth": 32,
+  "geometry": "4x2",
+  "fault": true,
+  "fault_kind": "read_count",
+  "solver": "bitwuzla",
+  "tasks": {
+    "bmc": {
+      "exit": 2,
+      "status": "FAIL"
+    }
+  }
+}

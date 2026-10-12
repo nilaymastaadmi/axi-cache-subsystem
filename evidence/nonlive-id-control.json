@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "fault": "removed non-live RID detection",
+  "fault_status": "DETECTED",
+  "witness": "ID fault containment",
+  "exit": 1
+}

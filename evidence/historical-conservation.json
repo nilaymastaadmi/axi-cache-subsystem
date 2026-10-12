@@ -1,0 +1,66 @@
+{
+  "blocking_development": {
+    "seeds": 8,
+    "accepted": 8968,
+    "completed": 8952,
+    "cancelled": 16,
+    "metadata_caveat": "Historical reused inputs seed=1; actual suite/log seeds=2..8. Corrected in later clean export."
+  },
+  "concurrent_development": {
+    "seeds": 8,
+    "accepted": 8920,
+    "completed": 8872,
+    "cancelled": 48
+  },
+  "concurrent_holdout": {
+    "seeds": 20,
+    "accepted": 40000,
+    "completed": 40000
+  },
+  "blocking_controls": {
+    "compiled_faults": 6,
+    "rejected_controls": 7
+  },
+  "concurrent_controls": {
+    "compiled_faults": 6,
+    "rejected_controls": 8
+  },
+  "formal-001/bmc": {
+    "status": "PASS",
+    "traces": 0
+  },
+  "formal-001/cover": {
+    "status": "PASS",
+    "traces": 6
+  },
+  "formal-controls-001/extra": {
+    "status": "PASS",
+    "traces": 0
+  },
+  "formal-controls-001/fault": {
+    "status": "FAIL",
+    "traces": 1
+  },
+  "concurrent-formal-003/bmc": {
+    "status": "PASS",
+    "traces": 0
+  },
+  "concurrent-formal-cover-001/cover": {
+    "status": "PASS",
+    "traces": 16
+  },
+  "concurrent-formal-fault-002/bmc": {
+    "status": "FAIL",
+    "traces": 1
+  },
+  "formal-001/covers": 6,
+  "concurrent-formal-cover-001/covers": 16,
+  "baseline_preserved": true,
+  "source_sha256": {
+    "rtl/cache.sv": "be6affb6f78e3e64d54e039f761d84bc6a43ef7926202f75adae1a7bd349d59d",
+    "rtl/cache_nb.sv": "ba4d19960291c981056cc82673cda4f397a0a343ff27f4323feca10447a0a085",
+    "verification/tb.cpp": "8c710d117e40357ea345b62a16f5513f8938c99087fc545e5eb7fb7aea730c3f",
+    "verification/tb_nb.cpp": "812d62945805894f32ba401f8363077afddde36646fd34b4f4e1f34e8a6066df"
+  },
+  "status": "PASS"
+}

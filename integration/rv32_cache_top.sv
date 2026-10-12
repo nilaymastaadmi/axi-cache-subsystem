@@ -1,0 +1,40 @@
+module rv32_cache_top #(parameter integer MODE=1) (
+    input wire clk, input wire rst_n,
+    input wire [1:0] req_valid, output wire [1:0] req_ready,
+    input wire [63:0] req_addr, input wire [1:0] req_write,
+    input wire [63:0] req_data, input wire [7:0] req_mask,
+    input wire [15:0] req_id,
+    output wire [1:0] rsp_valid, input wire [1:0] rsp_ready,
+    output wire [63:0] rsp_data, output wire [15:0] rsp_id,
+    output wire [1:0] rsp_error,
+    input wire flush_valid, output wire flush_ready,
+    output wire flush_done, input wire flush_done_ready,
+    output reg flush_error, output reg protocol_error,
+    output wire awvalid, input wire awready, output wire [31:0] awaddr,
+    output wire [1:0] awid, output wire [7:0] awlen, output wire [2:0] awsize,
+    output wire [1:0] awburst, output wire awlock,
+    output wire [3:0] awcache, output wire [2:0] awprot, output wire [3:0] awqos,
+    output wire wvalid, input wire wready, output wire [31:0] wdata,
+    output wire [3:0] wstrb, output wire wlast,
+    input wire bvalid, output wire bready, input wire [1:0] bid, input wire [1:0] bresp,
+    output wire arvalid, input wire arready, output wire [31:0] araddr,
+    output wire [1:0] arid, output wire [7:0] arlen, output wire [2:0] arsize,
+    output wire [1:0] arburst, output wire arlock,
+    output wire [3:0] arcache, output wire [2:0] arprot, output wire [3:0] arqos,
+    input wire rvalid, output wire rready, input wire [31:0] rdata,
+    input wire [1:0] rid, input wire [1:0] rresp, input wire rlast,
+    output wire [1:0] event_hit, output wire [1:0] event_miss
+,
+    input wire cpu_clk,input wire cpu_rst_n,input wire [31:0] cpu_imem_data,
+    input wire [31:0] cpu_dmem_rdata,output wire [31:0] cpu_imem_addr,cpu_dmem_addr,cpu_dmem_wdata,
+    output wire [3:0] cpu_dmem_wstrb,output wire cpu_dmem_we,cpu_halted,
+    output wire [31:0] cpu_retire_pc,cpu_retire_insn,cpu_retire_val,
+    output wire [4:0] cpu_retire_rd,output wire cpu_retire_we
+);
+    cache_compare #(.MODE(MODE)) memory_system(.*);
+    rv32i_core cpu(.clk(cpu_clk),.rst_n(cpu_rst_n),.imem_addr(cpu_imem_addr),.imem_data(cpu_imem_data),
+       .dmem_addr(cpu_dmem_addr),.dmem_wdata(cpu_dmem_wdata),.dmem_wstrb(cpu_dmem_wstrb),
+       .dmem_we(cpu_dmem_we),.dmem_rdata(cpu_dmem_rdata),.retire_pc(cpu_retire_pc),
+       .retire_insn(cpu_retire_insn),.retire_rd(cpu_retire_rd),.retire_val(cpu_retire_val),
+       .retire_we(cpu_retire_we),.halted(cpu_halted));
+endmodule

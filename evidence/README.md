@@ -1,0 +1,1 @@
+Saved local summaries, not freshly run evidence from the recipient machine. Raw logs remain in the private project; clean replay regenerates proof. Independent review is conditional on G1, now locally verified; the changed harness has not been independently rereviewed. Formal is a separate bounded gate.

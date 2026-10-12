@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "geometries": [
+    {
+      "sets": 4,
+      "words": 2,
+      "generic_cells": 5060,
+      "source": "s4w2.json"
+    },
+    {
+      "sets": 4,
+      "words": 4,
+      "generic_cells": 8219,
+      "source": "s4w4.json"
+    },
+    {
+      "sets": 8,
+      "words": 8,
+      "generic_cells": 26964,
+      "source": "s8w8.json"
+    }
+  ],
+  "scope": "generic mapped logic only"
+}

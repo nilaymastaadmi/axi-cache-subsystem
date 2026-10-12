@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "variants": [
+    {
+      "status": "PASS",
+      "retired": 396,
+      "memory_requests": 134,
+      "cycles": 2924,
+      "iterations": 64,
+      "flush_cycles": 131,
+      "variant": "blocking",
+      "trace_sha256": "6b744b4d7adaa29e868fbab63b8ffe2b58529f60ff9568495c66d3db2fb350bc",
+      "memory_sha256": "890a1c51dddbc352fc667d45a7a0428eb6a32dfe48718fdc8cd9b7d0014c2fdc",
+      "source": "blocking/summary.json"
+    },
+    {
+      "status": "PASS",
+      "retired": 396,
+      "memory_requests": 134,
+      "cycles": 3246,
+      "iterations": 64,
+      "flush_cycles": 133,
+      "variant": "concurrent",
+      "trace_sha256": "6b744b4d7adaa29e868fbab63b8ffe2b58529f60ff9568495c66d3db2fb350bc",
+      "memory_sha256": "890a1c51dddbc352fc667d45a7a0428eb6a32dfe48718fdc8cd9b7d0014c2fdc",
+      "source": "concurrent/summary.json"
+    },
+    {
+      "status": "PASS",
+      "retired": 396,
+      "memory_requests": 134,
+      "cycles": 2232,
+      "iterations": 64,
+      "flush_cycles": 2,
+      "variant": "bypass",
+      "trace_sha256": "6b744b4d7adaa29e868fbab63b8ffe2b58529f60ff9568495c66d3db2fb350bc",
+      "memory_sha256": "890a1c51dddbc352fc667d45a7a0428eb6a32dfe48718fdc8cd9b7d0014c2fdc",
+      "source": "bypass/summary.json"
+    }
+  ],
+  "scope": "data-cache integration; uncached instruction ROM, manually clock-enabled core"
+}

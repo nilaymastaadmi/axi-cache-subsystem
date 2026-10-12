@@ -1,0 +1,9 @@
+{
+  "origin": "rv32-dsp-soc",
+  "revision": "e27add12c562101237b15973bb46c827ccf86f07",
+  "assistance": "AI-assisted original core, new integration is AI-assisted",
+  "files": {
+    "rtl/rv32i_core.v": "7c2e31df261dbcb95202f000a046cc7516c248a6c856afd7608fb48f9723cfea",
+    "LICENSE": "d7419c492e4bab7fad20b191b1c612efde43e19ba4259ece9a23906f71a72f89"
+  }
+}

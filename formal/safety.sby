@@ -1,0 +1,21 @@
+[tasks]
+bmc
+cover
+
+[options]
+bmc: mode bmc
+bmc: depth 32
+cover: mode cover
+cover: depth 32
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal -sv -D CACHE_ASSERT cache.sv
+chparam -set SETS 2 -set WORDS 2 cache
+prep -top cache
+memory_map
+
+[files]
+../rtl/cache.sv

@@ -1,0 +1,96 @@
+{
+  "blocking": {
+    "development_seeds": 8,
+    "accepted": 8968,
+    "completed": 8952,
+    "cancelled": 16,
+    "compiled_faults": 7,
+    "evidence_controls": 7,
+    "W4_witness": "CACHE FAIL final flushed backing bytes at cycle 1547",
+    "confirmation_operations": 40000,
+    "confirmation_previously_opened": true
+  },
+  "banked": {
+    "development_seeds": 8,
+    "accepted": 9352,
+    "completed": 9304,
+    "cancelled": 48,
+    "compiled_faults": 7,
+    "evidence_controls": 8,
+    "W4_witness": "CACHE NB FAIL flushed backing byte map cycle=1605",
+    "confirmation_operations": 40000,
+    "confirmation_previously_opened": true
+  },
+  "g1-formal-nb-001": {
+    "depth": 32,
+    "geometry": "4x2",
+    "fault": false,
+    "fault_kind": null,
+    "solver": "bitwuzla",
+    "tasks": {
+      "bmc": {
+        "exit": 0,
+        "status": "PASS"
+      },
+      "cover": {
+        "exit": 0,
+        "status": "PASS"
+      }
+    }
+  },
+  "g1-formal-id-fault-001": {
+    "depth": 32,
+    "geometry": "4x2",
+    "fault": true,
+    "fault_kind": "identity",
+    "solver": "bitwuzla",
+    "tasks": {
+      "bmc": {
+        "exit": 2,
+        "status": "FAIL"
+      }
+    }
+  },
+  "g1-formal-count-fault-001": {
+    "depth": 32,
+    "geometry": "4x2",
+    "fault": true,
+    "fault_kind": "read_count",
+    "solver": "bitwuzla",
+    "tasks": {
+      "bmc": {
+        "exit": 2,
+        "status": "FAIL"
+      }
+    }
+  },
+  "g1-dirty-cover-001": {
+    "status": "PASS",
+    "covers": 8,
+    "traces": 8,
+    "depth": 32,
+    "solver": "bitwuzla"
+  },
+  "g1-formal-controls-001": {
+    "status": "PASS",
+    "extra_bounded_depth": 24,
+    "fault_status": "FAIL",
+    "assumptions": "initial reset only; no progress/fairness assumptions"
+  },
+  "status": "PASS",
+  "review_verdict": "VERIFIED WITH CAVEATS: conditional review minimum repairs locally reproduced; changed harness not independently rereviewed",
+  "sha256": {
+    "rtl/cache.sv": "be6affb6f78e3e64d54e039f761d84bc6a43ef7926202f75adae1a7bd349d59d",
+    "rtl/cache_nb.sv": "ba4d19960291c981056cc82673cda4f397a0a343ff27f4323feca10447a0a085",
+    "verification/tb.cpp": "7673d8e171206f66f7963a2006001e15c79db02ad74b4e083673cd8438c1a8e4",
+    "verification/tb_nb.cpp": "25493a09a39a911740698aa18c73508096101956a1a99e4ce46b7653aa16ac27",
+    "verification/run.py": "07d1314b907a3b1338e6fb2f7e23138515f10997688c4b89fee1844763d145aa",
+    "verification/run_nb.py": "b805ff6c41c1990bc9e5e7e8f1dcb4c0e9952fd5142e062f35f14f3182509032",
+    "verification/suite.py": "f2393088ad1840274504d778a27d1f55ef75d6f1880aeb7351238744a54978e7",
+    "verification/suite_nb.py": "cbd0d1005743ae8d58df2d3bd4fc1b82497a037fa974e53126e2f249e4ee81ed",
+    "formal/extra.svh": "113f64e6c49cd66d16287b45c2146121a6632d0fa23356e9c8ec35e529c698cf",
+    "formal/nb_extra.svh": "1204632cf57d5561d2347171ad2aa35c0490858ca95df3478ea46f139822da7d",
+    "verification/formal_nb.py": "4074c0e0201e9d10ccbb19d91a0aed4439c01f7b4be4dd43abe39fb3f8b97cd7"
+  },
+  "review_report_sha256": "66527a55cd9b3d99d0d495c3f10dfc78f38d7fd01a2ced7c5a624e8bf1ee334f"
+}
